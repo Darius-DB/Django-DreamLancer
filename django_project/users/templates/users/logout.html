@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <h1>You have been looged out</h1>
+
+                <br>
+
+                <p class="lead"><a href="{% url 'login' %}">Login Again</a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12">
+                    
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="contact-image">
+                        <img src="images/contact-1-600x400.jpg" class="img-responsive" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

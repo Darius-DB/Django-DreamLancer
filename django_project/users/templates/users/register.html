@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <h1>Register</h1>
+    
+                <br>
+    
+                <p class="lead">Create your DreamLancer Account</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+    
+                <div class="col-md-6 col-sm-12">
+                    <form id="contact-form" role="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="col-md-12 col-sm-12">
+                            {{ form|crispy }}
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12">
+                            <input type="submit" class="form-control" name="send message" value="SignUp">
+                        </div>
+    
+                    </form>
+                    <div class="col-md-4 col-sm-12">
+                        <small class="text-muted">
+                            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        </small>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-sm-12">
+                    <div class="contact-image">
+                        <img src="images/contact-1-600x400.jpg" class="img-responsive" alt="">
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

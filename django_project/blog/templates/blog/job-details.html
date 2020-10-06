@@ -1,0 +1,57 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+     <section>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 col-md-3 col-xs-12">
+                         <div>
+                              <br>
+
+                              <img src="{{ user.profile.image.url }}" alt="" class="img-responsive wc-image">
+
+                              <br>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-xs-12">
+                         <form action="#" method="post" class="form">
+                              <h2>{{user.profile.first_name}} {{user.profile.last_name}} </h2>
+
+                              <p class="lead"><strong class="text-primary">{{ user.profile.years_of_experience }}</strong> <small> year(s) of experience</small></p>
+
+                              <p class="lead">
+                                   <i class="fa fa-briefcase"></i> {{ user.profile.abilities_1 }} / {{ user.profile.abilities_2 }} / {{ user.profile.abilities_3 }} / {{ user.profile.abilities_4 }} &nbsp;&nbsp;
+                                   
+                              </p>
+
+                              
+                         </form>
+                    </div>
+               </div>
+
+               <div class="panel panel-default">
+                    <div class="panel-heading">
+                         <h4>Dream Lancer Description</h4>
+                    </div>
+
+                    <div class="panel-body">
+                         {{ user.profile.description }}
+                    </div>
+               </div>
+
+               
+
+               <div class="clearfix">
+                    
+
+                    <ul class="social-icon pull-center">
+                         <li><a href="{{ user.profile.github_info }}" class="fa fa-github"></a></li>
+                         <li><a href="mailto:{{ user.email }}" class="fa fa-envelope-o"></a></li>
+                         <li><a href="{{ user.profile.linkedin_info }}" class="fa fa-linkedin"></a></li>
+                    </ul>
+               </div>
+          </div>
+     </section>
+
+{% endblock content %}

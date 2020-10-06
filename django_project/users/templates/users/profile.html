@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <h1>Profile</h1>
+
+                <br>
+
+                <p class="lead">Edit your profile informations</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+    
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12">
+                    <form id="contact-form" role="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="col-md-12 col-sm-12">
+                            {{ u_form|crispy }}
+                            {{ p_form|crispy }}
+                        </div>
+
+                        <div class="col-md-4 col-sm-12">
+                            <input type="submit" class="form-control" name="send message" value="Update">
+                        </div>
+
+                    </form>
+                    
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="contact-image">
+                        <img src="{{ user.profile.image.url }}" class="img-responsive" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

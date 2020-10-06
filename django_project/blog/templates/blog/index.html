@@ -1,0 +1,100 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+     <!-- HOME -->
+     <section id="home">
+          <div class="row">
+               <div class="owl-carousel owl-theme home-slider">
+                    <div class="item item-first">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>Lorem ipsum dolor sit amet.</h1>
+                                        <h3>Voluptas dignissimos esse, explicabo cum fugit eaque, perspiciatis quia ab nisi sapiente delectus eiet.</h3>
+                                        <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="item item-second">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>Distinctio explicabo vero animi culpa facere voluptatem.</h1>
+                                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, excepturi.</h3>
+                                        <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="item item-third">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>Efficient Learning Methods</h1>
+                                        <h3>Nam eget sapien vel nibh euismod vulputate in vel nibh. Quisque eu ex eu urna venenatis sollicitudin ut at libero.</h3>
+                                        <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <main>
+          <section>
+               <div class="container">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                              <div class="text-center">
+                                   <h2>About us</h2>
+
+                                   <br>
+
+                                   <p class="lead">DraemLancer is a website that aims to connect employers with freelancers in the easiest way possible</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+          <section>
+               <div class="container">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                              <div class="section-title text-center" style="padding-bottom: 80px;">
+                                   <h2>DreamLancers </h2>
+                              </div>
+                         </div>
+                    {% for job in jobs %}
+                         <div class="col-md-4 col-sm-4">
+                              <div class="courses-thumb courses-thumb-secondary">
+                                   <div class="courses-top">
+                                        
+                                        
+                                   </div>
+
+                                   <div class="courses-detail">
+                                        <h3><a href="{% url 'user' user.id %}">{{ job.first_name }} {{ job.last_name }}</a></h3>
+
+                                        <p class="lead"><strong>{{ job.domain }}</strong></p>
+
+                                        <p>{{ job.abilities_1 }} ,<strong>{{ job.abilities_2 }}</strong></p>
+                                   </div>
+
+                                   <div class="courses-info">
+                                        <a href="{% url 'user' user.id %}" class="section-btn btn btn-primary btn-block">View Details</a>
+                                   </div>
+                              </div>
+                         </div>
+                    {% endfor %}
+                    </div>
+               </div>
+          </section>
+
+     </main>
+
+{% endblock content %}
